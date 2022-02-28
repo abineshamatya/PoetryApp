@@ -1,0 +1,104 @@
+<section class="pt-3 pb-4" id="poem-detail-wrap animate-fade-in-2s">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 z-index-2 border-radius-xl mt-n9 mx-auto py-3 blur shadow-blur min-vh-100">
+                <div class="row">
+                    <div class="col-md-12 position-relative text-center">
+                        <div class="pt-7">
+                            <button mat-fab matTooltip="Back to Poem List" color="text-grey"
+                                aria-label="Back to Poem List" (click)="backButtonPress($event)"
+                                class="float-start back-btn-position" [disabled]="disabledBackBtn">
+                                <mat-icon>arrow_back_ios</mat-icon>
+                            </button>
+                            <button mat-fab
+                                matTooltip="{{poemModel.isFavorite?'Click to remove From Favorite List':'Click to Add to Favorite List'}}"
+                                (click)="addRemovePoemToFavorite($event)" color="warn" class="favorite-btn-position">
+                                <mat-icon>{{poemModel.isFavorite?'favorite_border':'favorite'}}</mat-icon>
+                            </button>
+                            <mat-card-header class="detail-header">
+                                <mat-card-title class="text-gradient text-primary">
+                                    <span class="h3">{{poemModel.title}}</span>
+                                </mat-card-title>
+                                <mat-card-subtitle class="detail-card-subtitle">
+                                    <small> {{"By "+ poemModel.author}}</small>
+                                    <mat-icon *ngIf="poemModel.isFavorite" color="warn" class="animate-fade-in-2s"
+                                        matTooltip="Favorite Poem" class="align-top-with-title"
+                                        aria-label="Favorite list">favorite
+                                    </mat-icon>
+                                </mat-card-subtitle>
+
+                            </mat-card-header>
+                        </div>
+                        <hr class="vertical dark w-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 animate-fade-in-2s pt-4">
+                        <div class="detail-poem-container">
+                            <div class="detail-poem pl-2 pt-2">
+                                <div *ngFor="let line of poemModel.lines; let idx = index">
+                                    {{line}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-12">
+                        <div class="sort-wrap float-end">
+                            <mat-form-field class="mat-focused text-dark">
+                                <mat-label class="text-dark">Sort Poems</mat-label>
+                                <mat-select [(value)]="sortPoemSelctedVal" class="text-dark" color="accent"
+                                    (selectionChange)="sortPoem($event)">
+                                    <mat-option *ngFor="let si of sortItems" [value]="si.value">
+                                        {{si.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="row">
+                    <div class="content">
+                        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxLayoutAlign=" stretch"
+                                *ngFor="let rpd of cs.randomPoemData; let idx = index">
+                                <mat-card class="card card-blur animate-fade-in-2s" [id]="idx"
+                                    [ngStyle]="{'border-top':'5px solid'+ rpd.cardColor}"
+                                    (click)="poemCardClick($event, rpd)">
+                                    <mat-card-header>
+                                        <div mat-card-avatar class="card-avatar"
+                                            [ngStyle]="{'background-color': rpd.cardColor}">
+                                            {{rpd.avatarName}}</div>
+                                        <mat-card-title>{{rpd.title}}</mat-card-title>
+                                        <mat-card-subtitle class="card-subtitle">
+                                            <span>
+                                                {{"By "+ rpd.author}}
+                                                <mat-icon color="warn" disabled matTooltip="Favorite Poem"
+                                                    class="align-top-with-title" aria-label="Favorite list">favorite
+                                                </mat-icon>
+                                            </span>
+                                        </mat-card-subtitle>
+                                    </mat-card-header>
+                                    <mat-card-content class="card-content">
+                                        <div *ngFor="let line of rpd.lines; let idx = index">
+                                            <span *ngIf="idx <= 6">
+                                                {{line}}
+                                                <span *ngIf="idx === 6 && rpd.linecount>6">
+                                                    <br />
+                                                    <button mat-stroked-button color="text-white" class="ms-n3">
+                                                        Read More...
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </div> 
+                </div>-->
+            </div>
+        </div>
+    </div>
+</section>

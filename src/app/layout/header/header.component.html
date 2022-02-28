@@ -1,0 +1,67 @@
+<div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+        <div class="col-12">
+            <div class="position-absolute my-3 pt-2 start-0 end-0 poetry-brand-container">
+                <p class="navbar-brand ms-sm-3 animate-fade-in-1s">
+                    𝓑𝓔-𝓟</p>
+            </div>
+        </div>
+    </div>
+</div>
+<header class=" header-2">
+    <div class="page-header min-vh-100 relative"
+        style="background-image: url('../../../assets/images/northern-lights.jpg');">
+        <span class="mask bg-gradient-primary"></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 text-center mx-auto animate-fade-in-1s">
+                    <bep-slider class="animate-fade-in-2s" *ngIf="showSlider"></bep-slider>
+                    <div class="start-container-wrap" *ngIf="!showSlider">
+                        <h1 class="text-white pt-3 mt-n5">The Bejoynd Poetry Platform</h1>
+                        <p class="lead text-white mt-4">A more empowered, traditional, simple, and making words
+                            endlessly
+                            for
+                            poets and writers all around the world.
+                            <br>
+                            On top of that, a search from over 1.4 million poems.
+                            <br>
+                        </p>
+                        <button class="fetch-poems-btn animate-fade-in-3s mt-4" [ngClass]="{active: showLoading}"
+                            routerLink="poem" [disabled]="showLoading" (click)="fetchRandomPoem($event);">
+                            <span class="circle-btn" aria-hidden="true"
+                                [ngClass]="{'circle-btn-active w-100': showLoading}">
+                                <span class="icon-btn arrow" [ngClass]="{'icon-btn-active': showLoading}"></span>
+                            </span>
+                            <span class="fetch-poems-btn-text hover-out animate-fade-in-1s"
+                                [ngClass]="{'bep-hide': showLoading}">Get Started</span>
+                            <span class="fetch-poems-btn-text hover-in" [ngClass]="{'bep-flex': showLoading}">
+                                Fetch Poems
+                                <mat-progress-spinner class="ms-sm-2" color="accent" mode="indeterminate" value="50"
+                                    *ngIf="showLoading" diameter="20">
+                                </mat-progress-spinner>
+
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-absolute w-100 z-index-1 bottom-0">
+            <svg class="line-waves" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="line-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                    </path>
+                </defs>
+                <g class="motion-waves">
+                    <use xlink:href="#line-wave" x="48" y="-1" fill="rgba(255,255,255,0.40"></use>
+                    <use xlink:href="#line-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
+                    <use xlink:href="#line-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
+                    <use xlink:href="#line-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
+                    <use xlink:href="#line-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
+                    <use xlink:href="#line-wave" x="48" y="16" fill="rgba(255,255,255,0.95"></use>
+                    <use xlink:href="#line-wave" x="48" y="19" fill="rgba(255,255,255,0.95"></use>
+                </g>
+            </svg>
+        </div>
+    </div>
+</header>

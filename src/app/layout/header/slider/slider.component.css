@@ -1,0 +1,137 @@
+/* 
+ - Top Sonnets Heading- Start
+*/
+.heading {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+  z-index: 999;
+}
+
+.white-heading:after {
+  background: url('../../../../assets/images/header-line-white.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.heading:after {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 40px;
+  width: 180px;
+  border-radius: 4px;
+  transform: translateX(-50%);
+}
+
+
+
+/* 
+ - Top Sonnets Heading- End
+*/
+
+/* 
+  --For Carousel Next & Prev Buttons - Start
+*/
+
+.slide p {
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1.24;
+  margin: 5px 0 5px 0;
+}
+
+@media (max-width:420px) {
+  .slide p {
+    color: #ffffff;
+    font-size: 1.0rem;
+    line-height: 1.24;
+    margin: 5px 0 5px 0;
+  }
+}
+
+.poem-slider-carousel .owl-prev,
+.poem-slider-carousel .owl-next {
+  position: absolute !important;
+  background: rgb(0 0 0 / 12%) !important;
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  z-index: 2 !important;
+  font-size: 35px !important;
+  font-weight: 900;
+  color: #ffffff !important;
+  transition: all .3s ease !important;
+  top: 40% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.poem-slider-carousel .owl-prev span,
+.poem-slider-carousel .owl-next span {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.poem-slider-carousel .owl-prev:hover,
+.poem-slider-carousel .owl-next:hover {
+  color: #fff !important;
+  background: #11111196 !important;
+}
+
+.poem-slider-carousel .owl-prev {
+  left: -13px !important;
+}
+
+.poem-slider-carousel .owl-next {
+  right: -60px !important
+}
+
+/* 
+  --For Carousel Next & Prev Buttons - End
+*/
+
+
+/* 
+  --For Carousel dots - Start
+*/
+.poem-slider-carousel .owl-theme .owl-dots .owl-dot span {
+  background: rgb(0 0 0 / 12%) !important;
+
+}
+
+.poem-slider-carousel .owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #ffffffb8 !important;
+}
+
+/* 
+  --For Carousel dots - End
+*/
+
+/* 
+  --For Author Names - Start
+*/
+.poem-slider-carousel small {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.42857143;
+  padding-top: 0.5rem;
+  color: rgb(17 33 57 / 71%);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.poem-slider-carousel small:before {
+  content: '\2014 \00A0';
+}
+
+/* 
+  --For Author Names - End
+*/

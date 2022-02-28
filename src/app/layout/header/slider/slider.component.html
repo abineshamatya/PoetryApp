@@ -1,0 +1,18 @@
+<section class="poem-slider-carousel animate-fade-in-2s">
+    <div class="heading white-heading">
+        Top Sonnets
+    </div>
+    <owl-carousel-o [options]="topPoemsSliderOptions" #poemCarousel>
+        <ng-container *ngFor="let pd of cs.poemSliderData; let idx = index">
+            <ng-template carouselSlide id="idx">
+                <div class="slide">
+                    <p class="h5 font-weight-light" *ngFor="let line of pd.lines; let idx = index">
+                        {{line}}
+                        <br />
+                    </p>
+                    <small>{{pd.author}}</small>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</section>

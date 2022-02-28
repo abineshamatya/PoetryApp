@@ -1,0 +1,94 @@
+/* 
+    -- To override the mat select angular - Start
+*/
+
+.mat-select-panel {
+  background: #f2f1f1 !important;
+}
+
+.mat-option {
+  color: #128db9 !important;
+}
+
+.mat-select-value {
+  color: #344767 !important;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #344767 !important;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #344767 !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #344767 !important;
+}
+
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+  background: #3447671f !important;
+}
+
+/*
+    Poem Article CSS- Start
+*/
+.sort-wrap {
+  position: relative;
+  top: 70px;
+  float: right;
+  z-index: 2;
+}
+
+.card-avatar {
+  background-color: var(--ptr-dark);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  word-wrap: break-word;
+  background-color: #fff;
+  color: #212121;
+  box-shadow: 0px 2px 1px -1px rgb(52 71 103 / 15%), 0px 1px 1px 0px #34476712, 0px 1px 3px 0px #3447671f !important;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, .125);
+  border-radius: 1rem;
+}
+
+.card-subtitle {
+  color: var(--ptr-dark);
+  font-size: 12px;
+}
+
+.cards-item {
+  padding: 1.5rem;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content>mat-card {
+  width: 320px;
+}
+
+.card:hover {
+  cursor: pointer;
+  border-top: 5px solid rgb(51 84 168) !important;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  background-color: hsl(0deg 0% 62% / 10%);
+}
+
+.card-blur {
+  background-color: hsla(223.6, 44%, 95.1%, 0.22);
+}
+
+/*
+    Poem Article CSS- End
+*/

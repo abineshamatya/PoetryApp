@@ -1,0 +1,137 @@
+<section class="pt-3 pb-4" id="poem-wrap" [ngClass]="{'animate-fade-out-2s bep-hide':showChildCmp}"
+    *ngIf="cs.randomPoemData.length > 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 z-index-2 border-radius-xl mt-n9 mx-auto py-3 blur shadow-blur min-vh-100">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="sort-wrap">
+                            <mat-form-field class="mat-focused text-dark">
+                                <mat-label class="text-dark">Sort Poems</mat-label>
+                                <mat-select [(value)]="sortPoemSelctedVal" class="text-dark" color="accent"
+                                    (selectionChange)="sortPoem($event)">
+                                    <mat-option *ngFor="let si of sortItems" [value]="si.value">
+                                        {{si.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <!-- Favorite Poem Container -->
+                <div id="favoritePoemContainer" *ngIf="cs.favoritePoemData.length>0">
+                    <div class="row">
+                        <div class="col-md-12 position-relative text-center pb-4">
+                            <div class="pt-7 pb-4">
+                                <h4 class="text-gradient text-primary">
+                                    <span>FAVORITE
+                                        POEMS</span>
+                                </h4>
+                            </div>
+                            <hr class="vertical dark w-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="content pb-4">
+                            <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                                <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxLayoutAlign=" stretch"
+                                    *ngFor="let rpd of cs.favoritePoemData; let idx = index">
+                                    <mat-card class="card card-blur animate-fade-in-2s" [id]="idx"
+                                        [ngStyle]="{'border-top':'5px solid'+ rpd.cardColor}"
+                                        (click)="poemCardClick($event, rpd)">
+                                        <mat-card-header>
+                                            <div mat-card-avatar class="card-avatar"
+                                                [ngStyle]="{'background-color': rpd.cardColor}">
+                                                {{rpd.avatarName}}</div>
+                                            <mat-card-title>{{rpd.title}}</mat-card-title>
+                                            <mat-card-subtitle class="card-subtitle">
+                                                <span>
+                                                    {{"By "+ rpd.author}}
+                                                    <mat-icon *ngIf="rpd.isFavorite" color="warn"
+                                                        matTooltip="Favorite Poem" class="align-top-with-title"
+                                                        aria-label="Favorite list">favorite
+                                                    </mat-icon>
+                                                </span>
+                                            </mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content class="card-content">
+                                            <div *ngFor="let line of rpd.lines; let idx = index">
+                                                <span *ngIf="idx <= 6">
+                                                    {{line}}
+                                                    <span *ngIf="idx === 6 && rpd.linecount>6">
+                                                        <br />
+                                                        <button mat-stroked-button color="text-white" class="ms-n3">
+                                                            Read More...
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Latest Poem Container -->
+                <div id="latestPoemContainer" *ngIf="cs.randomPoemData.length>0">
+                    <div class=" row">
+                        <div class="col-md-12 position-relative text-center pb-4">
+                            <div class="pt-7 pb-4">
+                                <h4 class="text-gradient text-primary">
+                                    <span>LATEST
+                                        POEMS</span>
+                                </h4>
+                            </div>
+                            <hr class="vertical dark w-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="content pb-4">
+                            <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                                <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxLayoutAlign=" stretch"
+                                    *ngFor="let rpd of cs.randomPoemData; let idx = index">
+                                    <mat-card class="card card-blur animate-fade-in-2s" [id]="idx"
+                                        [ngStyle]="{'border-top':'5px solid'+ rpd.cardColor}"
+                                        (click)="poemCardClick($event, rpd)">
+                                        <mat-card-header>
+                                            <div mat-card-avatar class="card-avatar"
+                                                [ngStyle]="{'background-color': rpd.cardColor}">
+                                                {{rpd.avatarName}}</div>
+                                            <mat-card-title>{{rpd.title}}</mat-card-title>
+                                            <mat-card-subtitle class="card-subtitle">
+                                                <span>
+                                                    {{"By "+ rpd.author}}
+                                                    <mat-icon *ngIf="rpd.isFavorite" color="warn"
+                                                        matTooltip="Favorite Poem" class="align-top-with-title"
+                                                        aria-label="Favorite list">favorite
+                                                    </mat-icon>
+                                                </span>
+                                            </mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content class="card-content">
+                                            <div *ngFor="let line of rpd.lines; let idx = index">
+                                                <span *ngIf="idx <= 6">
+                                                    {{line}}
+                                                    <span *ngIf="idx === 6 && rpd.linecount>6">
+                                                        <br />
+                                                        <button mat-stroked-button color="text-white" class="ms-n3">
+                                                            Read More...
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<bep-app-poem-detail [poemModel]="selectedPoemObj" (backToMainPage)="enablePoemList($event)" *ngIf="showChildCmp">
+</bep-app-poem-detail>
