@@ -96,10 +96,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 				block: 'start',
 				inline: 'nearest'
 			});
-			//scroll(selector);
 			return;
 		}
-		console.log('element', element);
 		let observer = new MutationObserver(mutations => {
 			mutations.forEach(function (mutation) {
 				let nodes = Array.from(mutation.addedNodes);
